@@ -1,0 +1,29 @@
+<odoo>
+
+    <record model="ir.ui.view" id="view_tree_data_logger">  <!-- vistas Tree-->
+                <field name="name">view.tree.data.logger</field>
+                <field name="model">data.logger</field>
+                <field name="arch" type="xml">
+                        <tree>
+                                <field name="tx_id"/>
+                                <field name="model_id"/>
+                                <field name="res_id"/>
+                                <field name="event" />
+                                <field name="old_content" />
+                                <field name="new_content" />
+                                <field name="create_date" />
+                                <field name="create_uid" />
+                        </tree>
+                </field>
+    </record>
+
+    <record id="action_data_logger" model="ir.actions.act_window">
+        <field name="name">Data Logger</field>
+        <field name="res_model">data.logger</field>
+    </record>
+
+    <menuitem id="menu_data_logger" name="Data Logger" parent="base.menu_custom"
+                action="action_data_logger"
+                sequence="55"/>
+
+</odoo>
